@@ -1,0 +1,9 @@
+[submodule "src/norouter-parent"]
+	path = src/norouter-parent
+	url = ssh://git@code.ldschurch.org:7999/cf/norouter-parent.git
+[submodule "src/norouter-core"]
+	path = src/norouter-core
+	url = ssh://git@code.ldschurch.org:7999/cf/norouter-core.git
+[submodule "src/norouter-f5"]
+	path = src/norouter-f5
+	url = ssh://git@code.ldschurch.org:7999/cf/norouter-f5.git

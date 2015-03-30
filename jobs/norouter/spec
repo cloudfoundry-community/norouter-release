@@ -1,0 +1,43 @@
+---
+name: norouter
+templates:
+  norouter.erb: bin/norouter
+  application.yml.erb: config/application.yml
+packages:
+- norouter-common
+- norouter-java
+- norouter
+
+properties:
+  nats.user:
+    description: The user used to connect to the NATS server.
+  nats.password:
+    description: The password used to connect to the NATS server.
+  nats.machines:
+    description: The list of hosts running NATS server.
+  nats.port:
+    description: The port used to connect to the NATS server.
+
+  norouter.f5.url:
+    description: The HTTPS URL of the target F5 LTM.
+  norouter.f5.user:
+    description: The user used to authenticate against the LTM.
+  norouter.f5.password:
+    description: The password used to authenticate against the LTM.
+  norouter.f5.poolNamePrefix:
+    description: The text used to prefix the name of the pools managed by norouter.
+    default: _pool_cf_
+  norouter.f5.iRuleNamePrefix:
+    description: The text used to prefix the name of the iRules managed by norouter.
+    default: _rule_cf_
+  norouter.f5.skipTlsVerification:
+    description: Indicates of TLS verification should be skipped when calling the LTM REST API.
+    default: true
+
+  norouter.heap_size:
+    description: The Java heap size of the Norouter.
+    default: "300m"
+
+  norouter.port:
+    description: The HTTP port used by the norouter for /varz, /healthz, and maybe some REST endpoints
+    default: 6080

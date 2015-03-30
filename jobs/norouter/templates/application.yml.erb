@@ -1,0 +1,22 @@
+---
+f5:
+  url: <%= p('norouter.f5.url') %>
+  user: <%= p('norouter.f5.user') %>
+  password: <%= p('norouter.f5.password') %>
+  iRuleNamePrefix: <%= p('norouter.f5.iRuleNamePrefix') %>
+  poolNamePrefix: <%= p('norouter.f5.poolNamePrefix') %>
+  skipTlsVerification: <%= p('norouter.f5.skipTlsVerification') %>
+
+logging:
+  level: INFO
+
+nats:
+  machines:
+<% p('nats.machines').each do |address| %>
+  - nats://<%= p('nats.user') %>:<%= p('nats.password') %>@<%= address %>:<%= p('nats.port') %>
+<% end %>
+
+pidfile: /var/vcap/sys/run/norouter/norouter.pid
+
+server:
+  port: <%= p('norouter.port') %>

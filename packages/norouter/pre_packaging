@@ -1,0 +1,22 @@
+set -e
+
+. common/setup-java-prepackaging.sh
+
+cd ${BUILD_DIR}/norouter-parent
+mvn -B -e clean install -DskipTests=true
+
+cd ${BUILD_DIR}/norouter-core
+mvn -B -e clean install -DskipTests=true
+mv target/norouter-core.jar ${BUILD_DIR}/
+
+cd ${BUILD_DIR}/norouter-f5
+mvn -B -e clean install -DskipTests=true
+mv target/norouter-f5.jar ${BUILD_DIR}/
+
+cd ${BUILD_DIR}
+rm -rf norouter-parent
+rm -rf norouter-core
+rm -rf norouter-f5
+
+cleanup_java
+

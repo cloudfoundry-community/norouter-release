@@ -1,0 +1,5 @@
+check process norouter
+  with pidfile /var/vcap/sys/run/norouter/norouter.pid
+  start program "/var/vcap/jobs/norouter/bin/norouter start"
+  stop program "/var/vcap/jobs/norouter/bin/norouter stop"
+  group vcap

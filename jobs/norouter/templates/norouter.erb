@@ -1,0 +1,43 @@
+#!/bin/bash
+
+JOB_DIR=/var/vcap/jobs/norouter
+RUN_DIR=/var/vcap/sys/run/norouter
+PIDFILE=$RUN_DIR/norouter.pid
+LIB_DIR=$JOB_DIR/lib
+
+source /var/vcap/packages/common/utils.sh
+
+case $1 in
+
+start)
+pid_guard $PIDFILE "Norouter"
+
+mkdir -p $RUN_DIR
+
+# Clean-up any Tomcat droppings
+rm -rf $RUN_DIR/tomcat
+
+mkdir -p $LIB_DIR
+cp /var/vcap/packages/norouter/norouter-f5.jar $LIB_DIR
+
+export JAVA_HOME=/var/vcap/packages/norouter-java
+
+cd $JOB_DIR
+exec $JAVA_HOME/bin/java -XX:OnOutOfMemoryError="/var/vcap/bosh/bin/monit restart norouter" \
+-server -XX:+UseG1GC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=25 -Xms128M -Xmx<%= p('norouter.heap_size') %> \
+-jar /var/vcap/packages/norouter/norouter-core.jar
+
+;;
+
+stop)
+kill_and_wait $PIDFILE
+
+;;
+
+*)
+echo "Usage: norouter {start|stop}"
+
+;;
+
+esac
+exit 0

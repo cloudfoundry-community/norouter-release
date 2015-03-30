@@ -1,4 +1,4 @@
 ---
-name: common
+name: norouter-common
 files:
 - common/utils.sh

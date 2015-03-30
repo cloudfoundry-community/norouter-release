@@ -1,5 +1,5 @@
 ---
-name: java
+name: norouter-java
 files:
 - java/*
 

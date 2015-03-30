@@ -1,0 +1,9 @@
+---
+name: norouter
+dependencies:
+files:
+- norouter-parent/**/*
+- norouter-core/**/*
+- norouter-f5/**/*
+- java/*
+- common/setup-java-prepackaging.sh
