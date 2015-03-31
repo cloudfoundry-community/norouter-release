@@ -1,9 +1,9 @@
 [submodule "src/norouter-parent"]
 	path = src/norouter-parent
-	url = ssh://git@code.ldschurch.org:7999/cf/norouter-parent.git
+	url = https://github.com/cloudfoundry-community/norouter-parent
 [submodule "src/norouter-core"]
 	path = src/norouter-core
-	url = ssh://git@code.ldschurch.org:7999/cf/norouter-core.git
+	url = https://github.com/cloudfoundry-community/norouter-core
 [submodule "src/norouter-f5"]
 	path = src/norouter-f5
-	url = ssh://git@code.ldschurch.org:7999/cf/norouter-f5.git
+	url = https://github.com/cloudfoundry-community/norouter-f5
