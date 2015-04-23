@@ -25,19 +25,50 @@ properties:
   norouter.f5.password:
     description: The password used to authenticate against the LTM.
   norouter.f5.poolNamePrefix:
-    description: The text used to prefix the name of the pools managed by norouter.
+    description:
+      The text used to prefix the name of the pools managed by norouter.
     default: _pool_cf_
   norouter.f5.iRuleNamePrefix:
-    description: The text used to prefix the name of the iRules managed by norouter.
+    description:
+      The text used to prefix the name of the iRules managed by norouter.
     default: _rule_cf_
+  norouter.f5.loggingPoolName:
+    description:
+      The pool used for HSL logging to forwards access logs and metrics to
+      Loggregator. The pool members of this pool get populated automatically by
+      Norouter.
+    default: _cf_logging_pool
+  norouter.f5.loggingPort:
+    description:
+      The port Norouter listens on for receiving access logs and metrics from
+      the LTM. These logs and metrics get forwarded to Metron.
+    default: 2015
+  norouter.f5.ltmId:
+    description:
+      The 'index' of the LTM used in Loggregator messages. (i.e. Access logs
+      show up with [RTR/ltmId] as the source.)
+    default: f5.ltmId
   norouter.f5.skipTlsVerification:
-    description: Indicates of TLS verification should be skipped when calling the LTM REST API.
+    description:
+      Indicates of TLS verification should be skipped when calling the LTM
+      REST API.
     default: true
+
+  # Router Virtual Server
+  norouter.f5.routerVirtualServer.name:
+    description: The name of the Virtual Server on the LTM.
+  norouter.f5.routerVirtualServer.destination:
+    description: The socket address of the virtual server (i.e. 10.1.2.3:80)
+  norouter.f5.routerVirtualServer.description:
+    description: The value of the Virtual Server's description field.
+    default: Cloud Foundry Norouter Virtual Server -- Automatically created by Norouter.
 
   norouter.heap_size:
     description: The Java heap size of the Norouter.
     default: "300m"
 
   norouter.port:
-    description: The HTTP port used by the norouter for /varz, /healthz, and maybe some REST endpoints
+    description:
+      The HTTP port used by the norouter for /varz, /healthz, and maybe some
+      REST endpoints.
     default: 6080
