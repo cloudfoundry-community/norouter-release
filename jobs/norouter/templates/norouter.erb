@@ -17,15 +17,12 @@ mkdir -p $RUN_DIR
 # Clean-up any Tomcat droppings
 rm -rf $RUN_DIR/tomcat
 
-mkdir -p $LIB_DIR
-cp /var/vcap/packages/norouter/norouter-f5.jar $LIB_DIR
-
 export JAVA_HOME=/var/vcap/packages/norouter-java
 
 cd $JOB_DIR
 exec $JAVA_HOME/bin/java -XX:OnOutOfMemoryError="/var/vcap/bosh/bin/monit restart norouter" \
 -server -XX:+UseG1GC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=25 -Xms128M -Xmx<%= p('norouter.heap_size') %> \
--jar /var/vcap/packages/norouter/norouter-core.jar
+-jar /var/vcap/packages/norouter/norouter-f5.jar
 
 ;;
 
