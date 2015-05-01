@@ -1,3 +1,5 @@
 ---
-builds: {}
+builds:
+  8af87aee-ec81-4735-8df2-48674892c9fa:
+    version: '1'
 format-version: '2'

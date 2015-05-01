@@ -1,0 +1,30 @@
+---
+packages:
+- name: norouter
+  version: 05e644954a6f66d4dd6886e1401281bfabcba5c8
+  fingerprint: 05e644954a6f66d4dd6886e1401281bfabcba5c8
+  sha1: 55486db3df916af73896c46a60cbff7c4c1377ef
+  dependencies: []
+- name: norouter-java
+  version: 4011698a38ead99a5a561b43451bbbeeb1e3bfd1
+  fingerprint: 4011698a38ead99a5a561b43451bbbeeb1e3bfd1
+  sha1: 7caad3ab544529f477a27b09e6d7d116711ae3ae
+  dependencies: []
+- name: norouter-common
+  version: 9735c7e805e628233c936fb318f5a9eda6f861ca
+  fingerprint: 9735c7e805e628233c936fb318f5a9eda6f861ca
+  sha1: 5f87e0ca6f93204328322ded46a0a5a56aed5d7c
+  dependencies: []
+jobs:
+- name: norouter
+  version: 71840a700bafc01379cf1c412a0e8e570f0ba9d9
+  fingerprint: 71840a700bafc01379cf1c412a0e8e570f0ba9d9
+  sha1: 27282b866755c2f68fa8045fd0d06e012039b2d6
+license:
+  version: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
+  fingerprint: 0fbc9511a7e7f3a4d2f1af47f5ed327237b5f06c
+  sha1: 328d2d7376f8e3a64386b533a2a30f2ce7056b62
+commit_hash: a12f5661
+uncommitted_changes: false
+name: norouter
+version: '1'
