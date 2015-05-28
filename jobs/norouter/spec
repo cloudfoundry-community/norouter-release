@@ -62,6 +62,11 @@ properties:
   norouter.f5.routerVirtualServer.description:
     description: The value of the Virtual Server's description field.
     default: Cloud Foundry Norouter Virtual Server -- Automatically created by Norouter.
+  norouter.f5.routerVirtualServer.source:
+    description: The source field of the virtual server.
+    default: 0.0.0.0/0
+  norouter.f5.routerVirtualServer.rules:
+    description: A list of custom iRules used by the virtual server.
 
   norouter.heap_size:
     description: The Java heap size of the Norouter.

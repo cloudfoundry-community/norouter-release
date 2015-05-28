@@ -14,6 +14,13 @@ f5:
     name: <%= p('norouter.f5.routerVirtualServer.name') %>
     description: <%= p('norouter.f5.routerVirtualServer.description') %>
     destination: <%= p('norouter.f5.routerVirtualServer.destination') %>
+    source: <%= p('norouter.f5.routerVirtualServer.source') %>
+<% if_p('norouter.f5.routerVirtualServer.rules') do |rules| %>
+    rules:
+<% rules.each do |rule| %>
+    - <%= rule %>
+<% end %>
+<% end %>
 
 logging:
   level: INFO
